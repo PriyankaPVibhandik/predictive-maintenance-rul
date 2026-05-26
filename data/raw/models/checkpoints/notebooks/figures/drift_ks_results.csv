@@ -1,0 +1,18 @@
+Feature,KS Statistic,P-Value,Drift Detected
+op_3,0.0,1.0,False
+op_1,0.026,0.755,False
+op_2,0.033,0.4591,False
+s_14,0.1055,0.0,True
+s_9,0.149,0.0,True
+s_8,0.158,0.0,True
+s_13,0.16,0.0,True
+s_2,0.179,0.0,True
+s_20,0.1845,0.0,True
+s_17,0.1885,0.0,True
+s_11,0.1895,0.0,True
+s_21,0.1895,0.0,True
+s_7,0.195,0.0,True
+s_4,0.2035,0.0,True
+s_3,0.204,0.0,True
+s_12,0.2065,0.0,True
+s_15,0.2125,0.0,True

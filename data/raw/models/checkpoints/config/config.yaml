@@ -1,0 +1,46 @@
+data:
+  raw_dir: data/raw
+  processed_dir: data/processed
+  cmapss_subset: FD001          # FD001 | FD002 | FD003 | FD004
+  rul_clip: 125                 # clip RUL at this value (piece-wise linear)
+  test_size: 0.2
+  val_size: 0.1
+  sequence_length: 30
+
+model:
+  lstm:
+    input_size: 14              # number of selected sensor features
+    hidden_size: 128
+    num_layers: 2
+    dropout: 0.2
+    bidirectional: false
+  training:
+    batch_size: 64
+    max_epochs: 50
+    learning_rate: 0.001
+    patience: 10                # early stopping patience
+  checkpoint_dir: models/checkpoints
+
+anomaly:
+  contamination: 0.05           # expected fraction of anomalies
+  detectors:
+    - IForest
+    - LOF
+    - HBOS
+
+scheduler:
+  cost_repair: 500              # cost of planned repair ($)
+  cost_failure: 5000            # cost of unplanned failure ($)
+  maintenance_window_hours: 8
+  max_units_per_day: 3
+
+mlflow:
+  tracking_uri: mlruns
+  experiment_name: predictive_maintenance
+
+api:
+  host: "0.0.0.0"
+  port: 8000
+
+streamlit:
+  port: 8501
